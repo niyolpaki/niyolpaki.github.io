@@ -26,18 +26,53 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+          width: 60px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: transparent; 
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: transparent; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: transparent; 
+        }
+        
+    </style>
+
 </head>
 
 <body class='section-1'>
+
+  
+
     <div id='contenu'>
+
+        <div id="mask">
+            <img src="img/mask2.png">
+        </div><!-- mask --> 
+
         <div id='menu'>
+
             <div class='container'>
 
-                <body id="page-top">
+                <div id="page-top">
+
                     <!-- Navigation -->
                     <a class="menu-toggle rounded" href="#">
                         <i class="fas fa-bars"></i>
                     </a>
+
                     <nav id="sidebar-wrapper">
                         <ul class="sidebar-nav">
                             <li class="sidebar-brand">
@@ -92,13 +127,16 @@
                             </li>
                         </ul>
                     </nav>
+
+
                     <!-- Bootstrap core JavaScript -->
                     <script src="vendor/jquery/jquery.min.js"></script>
                     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
                     <!-- Plugin JavaScript -->
                     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
                     <!-- Custom scripts for this template -->
-                    <script src="js/stylish-portfolio.min.js"></script>
-                </body>
+                    <script src="js/stylish-portfolio.min.js"></script> 
+
+</body>
 
 </html>

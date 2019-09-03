@@ -165,7 +165,6 @@ function draw() {
     }
     cuecue_yvalues = [];
 
-
     if (sketchSelector == 0) {
         tlalocan();
     }
@@ -421,8 +420,8 @@ function cuecue_xochichuicatl() {
 
 
     if (cuecue_contador >= 3160 && cuecue_contador <= 3760) {
-        
-        
+
+
         cuecue_xochitl();
 
 
@@ -443,7 +442,8 @@ function windowResized() {
 
 function keyPressed() {
 
-    if (key == 'r' || key == 'R') {
+    if (key == 'a' || key == 'A') {
         window.location.reload();
     }
+
 }

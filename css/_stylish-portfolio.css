@@ -12,6 +12,7 @@ html {
 
 body {
     font-family: 'Varela Round';
+    overflow: hidden;
     
 }
 
@@ -29,8 +30,16 @@ canvas {
 }
 
 #mask{
+    margin: 0 auto;
     display: block;
     z-index: 1;
+    margin-top: 4px;
+    margin-left: -48px;
+}
+
+#mask img{
+    margin: 0 auto;
+    height: 1101px;
 }
 
 #content {

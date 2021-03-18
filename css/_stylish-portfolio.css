@@ -12,8 +12,6 @@ html {
 
 body {
     font-family: 'Varela Round';
-    overflow: hidden;
-    
 }
 
 p{
@@ -22,6 +20,26 @@ p{
   max-width: 340px!important;
   text-align: justify;}
 
+#mask {
+    position: relative;
+   margin; 0 auto;
+   display; block;
+   z-index: 1;
+   margin-top: -20px !important;
+   margin-left:-130px !important;
+   
+
+} 
+
+#mask img{
+
+   margin: 0 auto;
+    height: 850px;
+    width: 1590px;
+
+}
+
+
 canvas {
     position: fixed;
     top: 0;
@@ -29,18 +47,6 @@ canvas {
     z-index: 0;
 }
 
-#mask{
-    margin: 0 auto;
-    display: block;
-    z-index: 1;
-    margin-top: 4px;
-    margin-left: -48px;
-}
-
-#mask img{
-    margin: 0 auto;
-    height: 1101px;
-}
 
 #content {
     height: 100%;
@@ -252,7 +258,7 @@ h6 {
     width: 50px;
     height: 50px;
     text-align: center;
-    color: #fff;
+    color: #000;
 background: rgba(0, 0, 0, 0.1);    line-height: 50px;
     z-index: 999;
 }

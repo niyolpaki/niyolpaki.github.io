@@ -30,8 +30,8 @@ function nicuicanitl() {
 
     for (let x = 0; x < yvalues.length; x++) {
         //stroke(160, 237, 231);   
-        stroke(0, 207, 220);
-        strokeWeight(1);
+        stroke(0, 207, 220, 140);
+        strokeWeight(2);
         //noStroke();
         line(x * xspacing, posX, x * xspacing, height / 2 + yvalues[x]);
         //ellipse(x * xspacing, height / 2 + yvalues[x], 6, 6);
@@ -53,6 +53,7 @@ function nicuicanitl() {
 
 // amoxohtoca, compuesta de 'toca', seguir, oh de oh-tli, 'camino' y amox-(tli), 'libro'
 
+
 function tlaaloc() {
 
     var ruidoX = -0.00006;
@@ -61,21 +62,25 @@ function tlaaloc() {
     var ruidoC = 0.0006;
     var posC = noise(millis() * ruidoC) * 8;
 
-    var ruidoY = 0.00005;
-    var posY = noise(millis() * ruidoY) * 14;
+    var ruidoY = 0.0000015;
+    var posY = noise(millis() * ruidoY) * 40;
 
     var ruidoC4 = 0.0001;
     var posC4 = noise(millis() * ruidoC4) * height * 1.2;
+    translate(300, 0);
 
-
-    for (let x = 0; x < 190; x++) {
-
-        stroke(90, random(248), 255, random(220));
-
+    for (let x = 0; x < yvalues.length; x++) {
+        //stroke(160, 237, 231);   
+        stroke(66, 158, 166);
+        strokeWeight(2);
+        //noStroke();
+        line(x * xspacing, posX, x * xspacing, height / 2 + yvalues[x]);
+        //ellipse(x * xspacing, height / 2 + yvalues[x], 6, 6);
         for (var i = 0, j = 2; i < j; i++) {
             line(x * 20, posX + yvalues[x], x * 20, posX + random(7) + yvalues[x] + posC);
             line(x * 18, posC4 + yvalues[x], x * 18, posC4 + yvalues[x] + posC);
-            image(tlaloc, x * posY, posY - 200 + yvalues[x]);
+
+            image(tlaloc, x * posY, posY  + yvalues[x], 300, 300);
         }
     }
 }
@@ -240,10 +245,10 @@ function tloquenahuaquee() {
     var ruidoC = 0.0008;
     var posC = noise(millis() * ruidoC) * 80;
 
-    translate(width / 2, height / 2);
-    for (var i = 0; i < 160; i++) {
+    translate(width / 1.88, height / 2);
+    for (var i = 0; i < 10; i++) {
         push();
-        rotate(TWO_PI * i / 128);
+        rotate(TWO_PI * i / 10);
         var tx = 100 * noise(0.005 * frameCount);
         translate(tx, 0);
         rotate(radians(xon_giro));
@@ -251,9 +256,9 @@ function tloquenahuaquee() {
         image(tloquenahuaque, 0, 0);
         pop();
     }
-    for (var i = 0; i < 160; i++) {
+    for (var i = 0; i < 12; i++) {
         push();
-        rotate(TWO_PI * i / 28);
+        rotate(TWO_PI * i / 12);
         var tx = 300 * noise(0.004 * frameCount);
         translate(tx, 0);
         rotate(radians(-xon_giro));
@@ -261,10 +266,11 @@ function tloquenahuaquee() {
         image(tloquenahuaque, 0, 0);
         pop();
     }
-    for (var i = 0; i < 160; i++) {
+
+    for (var i = 0; i < 14; i++) {
         push();
-        rotate(TWO_PI * i / 100);
-        var tx = 500 * noise(0.003 * frameCount);
+        rotate(TWO_PI * i / 12);
+        var tx = 520 * noise(0.003 * frameCount);
         translate(tx, 0);
         rotate(radians(xon_giro));
         imageMode(CENTER);
@@ -272,6 +278,7 @@ function tloquenahuaquee() {
         // image(tloquenahuaque, 0, 0, 120 + posC, 120 + posC);
         pop();
     }
+    
 }
 
 
@@ -494,7 +501,7 @@ function ton_ocelotl() {
 
     //    ton_xspacing = 4; // How far apart should each horizontal position be spaced
 
-    ton_xspacing = 3;
+    ton_xspacing = 23;
     var ruidoC4 = 0.00008;
     var posC4 = noise(millis() * ruidoC4) * 1000;
     var ruidoC4 = 0.00001;
@@ -533,7 +540,7 @@ function ton_xolotl() {
 
     //    ton_xspacing = 4; // How far apart should each horizontal position be spaced
 
-    ton_xspacing = 3;
+    ton_xspacing = 20;
     var ruidoC4 = 0.00008;
     var posC4 = noise(millis() * ruidoC4) * 1000;
     var ruidoC4 = 0.00001;
@@ -691,7 +698,7 @@ function tontemiquico() {
     var posA = noise(millis() * ruidoA) * 222;
 
     var ruidoC4 = 0.0003;
-    var posC4 = noise(millis() * ruidoC4) * 500;
+    var posC4 = noise(millis() * ruidoC4) * 1300;
 
     ton_xspacing = 10 + posC; // How far apart should each horizontal position be spaced
 
@@ -702,10 +709,11 @@ function tontemiquico() {
 
         //stroke(random(255), 0, 240);
         strokeWeight(2);
-        noStroke();
-        //stroke(0);
-        fill(255, 170, 0, 60);
-        fill(255, 30);
+        //noStroke();
+        stroke(255, 170);
+       // fill(255, 170, 0, 60);
+        fill(255, 10);
+
 
         //rect(x * ton_xspacing, posX, x * ton_xspacing, height / 2 + ton_yvalues[x]);
 
@@ -741,7 +749,7 @@ function toyollo() {
     var posA = noise(millis() * ruidoA) * 222;
 
     var ruidoC4 = 0.0003;
-    var posC4 = noise(millis() * ruidoC4) * 500;
+    var posC4 = noise(millis() * ruidoC4) * 1200;
 
     ton_xspacing = 10 + posC; // How far apart should each horizontal position be spaced
 
@@ -752,9 +760,10 @@ function toyollo() {
 
         //stroke(random(255), 0, 240);
         strokeWeight(2);
-        noStroke();
+        //noStroke();
         //stroke(0);
-        fill(255, 170, 0, 60);
+        stroke(255, 170, 0, 180);
+        noFill();
         //fill(255, 30);
 
         //rect(x * ton_xspacing, posX, x * ton_xspacing, height / 2 + ton_yvalues[x]);
@@ -816,13 +825,13 @@ function cuecue_xochitl() {
     var ruidoC = 0.00008;
     var posC = noise(millis() * ruidoC) * 12;
 
-    translate(width / 2, height / 2);
+    translate(width / 1.75, height / 2);
 
     //    cuecue_xspacing = 4; // How far apart should each horizontal position be spaced
 
-    cuecue_xspacing = 1;
+    cuecue_xspacing = 12;
     var ruidoC4 = 0.00008;
-    var posC4 = noise(millis() * ruidoC4) * 20;
+    var posC4 = noise(millis() * ruidoC4) * 10;
     var ruidoC4 = 0.00001;
 
     var posC5 = noise(millis() * ruidoC4) * 1.2;
@@ -832,12 +841,12 @@ function cuecue_xochitl() {
         //image(ocelotl, x * cuecue_xspacing, x + cuecue_yvalues[x] + i * posC4);
 
         for (var i = 0, j = 5; i < j; i++) {
-            rotate(radians(cuecue_giro / 290));
+            rotate(radians(cuecue_giro / 44));
             //rotate(TWO_PI * i);
             // image(ocelotl, x * cuecue_xspacing - posC5, x + cuecue_yvalues[x] + i * 200);
             imageMode(CENTER);
 
-            image(xochitl, x * cuecue_xspacing - posC4, x + cuecue_yvalues[x] + i * 200);
+            image(xochitl, x * cuecue_xspacing - posC4, x + cuecue_yvalues[x] + i * 800);
 
             //image(xochitl, 1300 + x * -cuecue_xspacing + 200, x + cuecue_yvalues[x] + i * 50, 180, 180);
         }
@@ -860,26 +869,24 @@ function tecuecuepalxochitl() {
     var ruidoA = 0.008;
     var posA = noise(millis() * ruidoA) * 222;
 
-    var ruidoC4 = 0.0003;
-    var posC4 = noise(millis() * ruidoC4) * 500;
+    var ruidoC4 = 0.000003;
+    var posC4 = noise(millis() * ruidoC4) * 1500;
 
     cuecue_xspacing = 10 + posC; // How far apart should each horizontal position be spaced
 
     translate(0, 100);
 
-    for (let x = 0; x < cuecue_yvalues.length; x++) {
+for (let x = 0; x < cuecue_yvalues.length; x++) {
         //stroke(160, 237, 231);
 
         //stroke(random(255), 0, 240);
         strokeWeight(2);
-        noStroke();
+        noFill();
         //stroke(0);
-        fill(255, 170, 0, 60);
-        fill(140, 223, 71, random(200));
+        stroke(250, 159, 66);
+        stroke(cuecue_contacolor, cuecue_contacolor, cuecue_contacolor, 180);
 
-        //rect(x * cuecue_xspacing, posX, x * cuecue_xspacing, height / 2 + cuecue_yvalues[x]);
-
-        rect(x * cuecue_xspacing, height / 8 + cuecue_yvalues[x], cuecue_xspacing / 4, posX);
+        ellipse(x * cuecue_xspacing + 50, 500 + cuecue_yvalues[x], posC4, posC4);
 
         //ellipse(x * cuecue_xspacing + 50, 200 + cuecue_yvalues[x], posC4, posC4);
 
@@ -888,18 +895,19 @@ function tecuecuepalxochitl() {
         noStroke();
         textSize(cuecue_fontsize + posT);
         fill(100, 0, cuecue_contacolor);
-        fill(53, 0, posA);
+        fill(0);
         for (var i = 0, j = words.length; i < j; i++) {
 
-            text(words[i], x * cuecue_xspacing, x + cuecue_yvalues[x] + i * 30);
+            text(words[i], x * cuecue_xspacing, x + cuecue_yvalues[x] + i * 60);
         }
     }
 }
 
+
 function cacahuaxochitl() {
 
-
-    var ruidoX = -0.00006;
+    
+    var ruidoX = 0.0006;
     var posX = noise(millis() * ruidoX) * height;
 
     var ruidoC = 0.00008;
@@ -911,46 +919,42 @@ function cacahuaxochitl() {
     var ruidoA = 0.008;
     var posA = noise(millis() * ruidoA) * 222;
 
-    var ruidoC4 = 0.0003;
-    var posC4 = noise(millis() * ruidoC4) * 5;
+    var ruidoC4 = 0.000003;
+    var posC4 = noise(millis() * ruidoC4) * 1500;
 
     cuecue_xspacing = 10 + posC; // How far apart should each horizontal position be spaced
 
-    translate(0, 70);
+    translate(0, 100);
 
-
-    for (let x = 0; x < cuecue_yvalues.length; x++) {
+for (let x = 0; x < cuecue_yvalues.length; x++) {
         //stroke(160, 237, 231);
 
         //stroke(random(255), 0, 240);
         strokeWeight(2);
-        noStroke();
+        noFill();
         //stroke(0);
-        fill(128, posA, 230, 90);
-        //fill(255, 30);
+        stroke(250, 159, 66);
+        stroke(cuecue_contacolor, cuecue_contacolor, cuecue_contacolor, 180);
 
-        //rect(x * cuecue_xspacing, posX, x * cuecue_xspacing, height / 2 + cuecue_yvalues[x]);
+        ellipse(x * cuecue_xspacing + 50, 500 + cuecue_yvalues[x], posC4, posC4);
 
-        //rect(x* cuecue_xspacing, height / 5 + cuecue_yvalues[x], cuecue_xspacing*1.2, posX);
-        push();
-        translate(x * cuecue_xspacing - 200, 200 + cuecue_yvalues[x]);
-        scale(posC4);
-
-        triangle(30, 75, 58, 20, 86, 75);
-        pop();
         //ellipse(x * cuecue_xspacing + 50, 200 + cuecue_yvalues[x], posC4, posC4);
 
         var words = RiTa.tokenize("¿Xochipetatl on ac? Cenca ye mochan, ye amoxcalitic, cuica yehua on tlatoa Xayacámach, quihuintia ye iolcacahuaxochitl. Yn huel yectli on cuicatl ycahuaca, yehua conehua ye icuic Tlapalteuccitzin, Huel ahuia yxochiuh, tzeltzelihui xochitl, cacahuaxochitl.")
 
         noStroke();
         textSize(cuecue_fontsize + posT);
-        fill(0, 100, posA);
-        fill(53, 0, posA);
-
+        fill(100, 0, cuecue_contacolor);
+        fill(0);
         for (var i = 0, j = words.length; i < j; i++) {
-            text(words[i], x * cuecue_xspacing, x + cuecue_yvalues[x] + i * 15);
+
+            text(words[i], x * cuecue_xspacing, x + cuecue_yvalues[x] + i * 60);
         }
     }
+/*
+        var words = RiTa.tokenize("¿Xochipetatl on ac? Cenca ye mochan, ye amoxcalitic, cuica yehua on tlatoa Xayacámach, quihuintia ye iolcacahuaxochitl. Yn huel yectli on cuicatl ycahuaca, yehua conehua ye icuic Tlapalteuccitzin, Huel ahuia yxochiuh, tzeltzelihui xochitl, cacahuaxochitl.")
+*/
+       
 }
 
 function cuecue_meztli() {

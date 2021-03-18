@@ -4,7 +4,7 @@
 
 let xspacing = 8; // How far apart should each horizontal position be spaced
 let w; // Width of entire wave
-let maxwaves = 200; // total # of waves to add together
+let maxwaves = 120; // total # of waves to add together
 
 var lines, markov;
 
@@ -14,9 +14,10 @@ let dx = []; // Value for incrementing X, to be calculated as a function of peri
 let yvalues; // Using an array to store height values for the wave (not entirely necessary)
 
 var contador = 1;
+var contando = 1;
 
 var font,
-    fontsize = 13;
+    fontsize = 20;
 
 var contacolor = 0;
 var dato = 1;
@@ -39,7 +40,7 @@ let xon_yvalues; // Using an array to store height values for the wave (not enti
 var xon_contador = 1;
 
 var xon_font,
-    xon_fontsize = 13;
+    xon_fontsize = 20;
 
 var xon_contacolor = 0;
 var xon_dato = 1;
@@ -64,7 +65,7 @@ let ton_yvalues; // Using an array to store height values for the wave (not enti
 var ton_contador = 1;
 
 var ton_font,
-    ton_fontsize = 13;
+    ton_fontsize = 20;
 
 var ton_contacolor = 0;
 var ton_dato = 1;
@@ -75,9 +76,9 @@ var ton_giro = 1;
 
 // Zan moch ompa ye huitz - Xayacámach de Tizatlan
 
-let cuecue_xspacing = 10; // How far apart should each horizontal position be spaced
+let cuecue_xspacing = 20; // How far apart should each horizontal position be spaced
 let cuecue_w; // Width of entire wave
-let cuecue_maxwaves = 18; // total # of waves to add together
+let cuecue_maxwaves = 30; // total # of waves to add together
 
 var cuecue_lines, cuecue_markov;
 
@@ -89,7 +90,7 @@ let cuecue_yvalues; // Using an array to store height values for the wave (not e
 var cuecue_contador = 1;
 
 var cuecue_font,
-    cuecue_fontsize = 13;
+    cuecue_fontsize = 20;
 
 var cuecue_contacolor = 0;
 var cuecue_dato = 1;
@@ -99,7 +100,9 @@ var cuecue_giro = 5;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-var sketchSelector = [0, 1];
+//var sketchSelector = [0, 1];
+
+
 
 function preload() {
 
@@ -119,13 +122,16 @@ function setup() {
 
     //    sketchSelector = Math.round(random());
 
-    sketchSelector = Math.floor(Math.random() * 4);
+    //sketchSelector = Math.floor(Math.random() * 4);
+
+    //sketchSelector = 2;
 
     w = width;
     xon_w = width;
     ton_w = width;
     cuecue_w = width;
 
+    noCursor();
 
     //textFont("Marta-Italic");
     textFont("Varela Round");
@@ -140,7 +146,7 @@ function setup() {
 
     for (let i = 0; i < maxwaves; i++) {
         amplitude[i] = 1;
-        let period = 1400; // How many pixels before the wave repeats
+        let period = 800; // How many pixels before the wave repeats
         dx[i] = (TWO_PI / period) * xspacing;
     }
 
@@ -150,6 +156,9 @@ function setup() {
 }
 
 function draw() {
+
+    //noCursor();
+
 
     for (let i = 0; i < ton_maxwaves; i++) {
         ton_amplitude[i] = 3;
@@ -165,6 +174,34 @@ function draw() {
     }
     cuecue_yvalues = [];
 
+    contando++;
+
+    if (contando <= 1000) {
+        tlalocan();
+        //xon_ahuiyacan();
+        //cuecue_xochichuicatl();
+
+    }
+
+    if (contando >= 1000 && contando <= 3000) {
+        ton_temiquico();
+    }
+
+    if (contando >= 3000 && contando <= 5000) {
+        xon_ahuiyacan();
+    }
+
+    if (contando >= 5000 && contando <= 8760) {
+       cuecue_xochichuicatl();
+    }
+
+    if (contando >= 8760) {
+        contando = 0;
+    }
+
+
+
+/*
     if (sketchSelector == 0) {
         tlalocan();
     }
@@ -180,6 +217,8 @@ function draw() {
     if (sketchSelector == 3) {
         cuecue_xochichuicatl();
     }
+*/
+
 }
 
 
@@ -208,6 +247,8 @@ function tlalocan() {
 
     if (contador <= 300) {
         nicuicanitl();
+               // tlaaloc();
+
     }
 
     if (contador >= 300 && contador <= 700) {
@@ -442,8 +483,24 @@ function windowResized() {
 
 function keyPressed() {
 
-    if (key == 'a' || key == 'A') {
-        window.location.reload();
+if (key == 'a' || key == 'A') {
+        sketchSelector = 0;
+    }
+    
+if (key == 's' || key == 'S') {
+        sketchSelector = 1;
     }
 
+if (key == 'd' || key == 'D') {
+        sketchSelector = 2;
+    }
+
+if (key == 'f' || key == 'F') {
+        sketchSelector = 3;
+    }
+
+/*if (key == 'r' || key == 'R') {
+        window.location.reload();
+    }
+    */
 }
